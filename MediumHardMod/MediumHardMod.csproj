@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  <!--<PropertyGroup>
+  <PropertyGroup>
     <PublishAot>true</PublishAot>
-  </PropertyGroup>-->
+  </PropertyGroup>
 </Project>

@@ -26,8 +26,7 @@ public static class Program
     public static (bool, string) ProcessFile(FileInfo inputFile)
     {
         var songText = File.ReadAllText(inputFile.FullName);
-        var song = JsonSerializer.Deserialize<Song>(songText);
-        //var song = JsonSerializer.Deserialize(songText, SongJsonContext.Default.Song);
+        var song = JsonSerializer.Deserialize(songText, SongJsonContext.Default.Song);
 
         if (song is null)
             return (false, $"{inputFile} is not a valid song file");
