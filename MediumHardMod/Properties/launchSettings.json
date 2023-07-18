@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MediumHardMod": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\BandBoomboxSongs"
+    }
+  }
+}
