@@ -38,7 +38,8 @@ internal static class ReplaceNotes
 
     public static void AddExtraDifficulty(Song song, SongChart mediumChart)
     {
-        if (song == null) throw new ArgumentNullException(nameof(song));
+        if (song is null) throw new ArgumentNullException(nameof(song));
+        if (mediumChart is null) throw new ArgumentNullException(nameof(mediumChart));
         if (mediumChart == null) throw new ArgumentNullException(nameof(mediumChart));
 
         SongChart extraChart = new()
