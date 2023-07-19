@@ -20,6 +20,6 @@ internal class Song
 
     public bool HasChart(Difficulty difficulty)
     {
-        return this.SongCharts.Any(e => e.Difficulty == (int) difficulty);
+        return SongCharts.Any(e => e.Difficulty == (int) difficulty);
     }
 }
