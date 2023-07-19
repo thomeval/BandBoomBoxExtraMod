@@ -13,6 +13,6 @@
     <EditorConfigFiles Remove=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Projects\BoomBoxExtraMod\BandBoomBoxExtraMod\MediumHardMod\.editorconfig" />
+    <None Include=".editorconfig" />
   </ItemGroup>
 </Project>
