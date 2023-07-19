@@ -10,7 +10,7 @@
     <PublishAot>true</PublishAot>
   </PropertyGroup>
   <ItemGroup>
-    <EditorConfigFiles Remove="C:\Projects\BoomBoxExtraMod\BandBoomBoxExtraMod\MediumHardMod\.editorconfig" />
+    <EditorConfigFiles Remove=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Projects\BoomBoxExtraMod\BandBoomBoxExtraMod\MediumHardMod\.editorconfig" />
