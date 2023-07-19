@@ -2,14 +2,6 @@
 
 public enum Difficulty
 {
-    Beginner,
-    Medium,
-    Hard,
-    Expert,
-    Master,
-    Extra = 10
-}
-{
     Beginner = 0,
     Medium = 1,
     Hard = 2,
