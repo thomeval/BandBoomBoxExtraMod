@@ -36,27 +36,35 @@ internal static class ReplaceNotes
         return result.ToString();
     }
 
-    public static void AddMedHardDifficulty(Song song, SongChart mediumChart)
+    public static void AddExtraDifficulty(Song song, SongChart mediumChart)
     {
-        if (song?.SongCharts is null) return;
+        if (song == null) throw new ArgumentNullException(nameof(song));
+        if (mediumChart == null) throw new ArgumentNullException(nameof(mediumChart));
 
-        SongChart medHardChart = new()
+        SongChart extraChart = new()
         {
-            Difficulty = 10,
+            Difficulty = (int) Difficulty.Extra,
             Notes = new string[mediumChart.Notes?.Length ?? 0],
             DifficultyLevel = mediumChart.DifficultyLevel + 1,
             Group = mediumChart.Group
         };
 
-        bool replace = true;
-
-        for (int i = 0; i < mediumChart?.Notes?.Length; i++)
+        // Remove any existing extra charts
+        var existingCharts = song.SongCharts.Where(x => x.Difficulty == 10 && x.Group == extraChart.Group).ToList();
+        foreach (var chart in existingCharts)
         {
-            var newNote = ReplaceAllNotes(mediumChart.Notes[i], ref replace);
-            medHardChart.Notes[i] = newNote;
+            song.SongCharts.Remove(chart);
         }
 
-        song.SongCharts.Add(medHardChart);
-        song.SongCharts = song?.SongCharts?.OrderBy(x => x.DifficultyLevel).ToList();
+        bool replace = true;
+
+        for (int i = 0; i < mediumChart.Notes?.Length; i++)
+        {
+            var newNote = ReplaceAllNotes(mediumChart.Notes[i], ref replace);
+            extraChart.Notes[i] = newNote;
+        }
+
+        song.SongCharts.Add(extraChart);
+        song.SongCharts = song.SongCharts.OrderBy(x => x.DifficultyLevel).ToList();
     }
 }
