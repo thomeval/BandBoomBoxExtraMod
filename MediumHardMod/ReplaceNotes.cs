@@ -40,7 +40,6 @@ internal static class ReplaceNotes
     {
         if (song is null) throw new ArgumentNullException(nameof(song));
         if (mediumChart is null) throw new ArgumentNullException(nameof(mediumChart));
-        if (mediumChart == null) throw new ArgumentNullException(nameof(mediumChart));
 
         SongChart extraChart = new()
         {
